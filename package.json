@@ -1,6 +1,6 @@
 {
   "name": "davmedia-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "_davMEDIA — local audio and video toolbox for Windows, macOS and Linux.",

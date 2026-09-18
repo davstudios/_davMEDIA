@@ -1,6 +1,6 @@
-# _davMEDIA v1.0.0
+# _davMEDIA v1.0.1
 
-Questa è una preview locale. Non è prevista la pubblicazione GitHub fino alla v1.0.0.
+Release stabile.
 
 `npm install` installa i pacchetti che forniscono FFmpeg e FFprobe per la piattaforma corrente. Prima di `tauri dev` e `tauri build`, lo script `prepare:ffmpeg` copia i binari in `src-tauri/resources/ffmpeg`.
 

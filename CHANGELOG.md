@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Build frontend migrata da esbuild a Oxc per compatibilità con Vite 8.
+- Corrette le build GitHub Actions su Windows, macOS e Linux.
+- Versione UI aggiornata automaticamente tramite Tauri.
+
 ## 1.0.0
 
 Prima release stabile di `_davMEDIA`.
