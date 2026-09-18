@@ -1,0 +1,7 @@
+node_modules
+dist
+src-tauri/target
+src-tauri/resources/ffmpeg/*
+!src-tauri/resources/ffmpeg/.gitkeep
+.DS_Store
+*.log
