@@ -1,9 +1,9 @@
 {
   "name": "davmedia-app",
-  "version": "1.0.1",
+  "version": "26.10.1",
   "private": true,
   "type": "module",
-  "description": "_davMEDIA — local audio and video toolbox for Windows, macOS and Linux.",
+  "description": "_davMEDIA — local audio and video toolbox for Windows, macOS and Linux by _davstudios.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -28,5 +28,8 @@
   "allowScripts": {
     "ffmpeg-static": true,
     "@derhuerst/ffprobe-static": true
-  }
+  },
+  "author": "_davstudios",
+  "license": "MIT",
+  "homepage": "https://davstudios.it"
 }

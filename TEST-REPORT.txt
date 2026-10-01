@@ -1,3 +1,56 @@
-_davMEDIA v1.0.1
-Test automatici eseguiti con npm test.
-La compilazione nativa Tauri completa deve essere eseguita su Windows/macOS/Linux con FFmpeg preparato per la piattaforma.
+_davMEDIA v26.10.1 — Test report
+Date: 2026-10-01
+
+Automated tests: 37/37 passed
+- Media/FFmpeg engine tests: passed
+- FFprobe path compatibility tests: passed
+- Queue and format tests: passed
+- Project/package metadata contract: passed
+- GitHub Release bilingual-description contract: passed
+- Version synchronization: passed
+- Vite 8/Oxc build-policy tests: passed
+
+Static validation:
+- src/main.js: syntax valid
+- src/media-engine.js: syntax valid
+- scripts/verify-release-version.mjs: syntax valid
+- vite.config.js: syntax valid
+- package.json: valid JSON
+- package-lock.json: valid JSON
+- src-tauri/tauri.conf.json: valid JSON
+- src-tauri/capabilities/default.json: valid JSON
+- .github/workflows/release.yml: valid YAML
+
+Bundle metadata:
+- Version: 26.10.1
+- Public tag: v26.10.1
+- Publisher: _davstudios
+- Homepage: https://davstudios.it
+- License: MIT for _davMEDIA source code; third-party components retain their licenses
+- Copyright: © 2026 _davstudios
+- Identifier preserved: studio.dav.media
+- Category: Video
+- Linux DEB section: video
+- Linux DEB priority: optional
+
+Release workflow:
+- Windows x64 NSIS
+- macOS Apple Silicon DMG
+- macOS Intel DMG
+- Linux x64 AppImage and DEB
+- FFmpeg/FFprobe preparation preserved
+- GitHub Release body is read from the tagged commit Description
+- Both 🇮🇹 and 🇺🇸 sections are required
+- Linux apt workflow hardened against unavailable Microsoft repositories
+
+Functional scope:
+- 15 functional source/backend/config files were compared byte-for-byte against the supplied source ZIP and remained unchanged.
+- Media engine, Rust backend, UI/CSS, FFmpeg preparation scripts and existing runtime behavior were not changed in this metadata/release-standard update.
+
+Code signing:
+- No trusted commercial Windows certificate configured.
+- No Apple Developer ID/notarization configured.
+- README contains SmartScreen, Gatekeeper and AppImage guidance.
+
+Native build:
+- Native Tauri packages are expected to be verified by GitHub Actions on Windows, macOS and Linux.

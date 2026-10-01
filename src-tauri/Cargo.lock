@@ -664,7 +664,7 @@ dependencies = [
 
 [[package]]
 name = "davmedia"
-version = "1.0.0"
+version = "26.10.1"
 dependencies = [
  "serde",
  "serde_json",

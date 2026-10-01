@@ -1,8 +1,10 @@
 [package]
 name = "davmedia"
-version = "1.0.1"
-description = "_davMEDIA desktop application"
+version = "26.10.1"
+description = "_davMEDIA — local audio and video toolbox for Windows, macOS and Linux by _davstudios."
 authors = ["_davstudios"]
+license = "MIT"
+homepage = "https://davstudios.it"
 edition = "2021"
 rust-version = "1.85"
 

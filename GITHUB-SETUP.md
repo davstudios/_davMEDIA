@@ -1,13 +1,15 @@
-# GitHub release
+# GitHub setup
 
-`_davMEDIA` pubblica release a partire dalla v1.0.0.
+1. Crea o usa la repository pubblica `_davMEDIA`.
+2. Copia il contenuto del progetto nella root senza eliminare la cartella locale `.git`.
+3. Esegui `npm test` e prova l'app con `npm run desktop` quando necessario.
+4. In GitHub Desktop usa come Summary `_davMEDIA v26.10.1` e inserisci nella Description le modifiche complete in formato bilingue `🇮🇹 ...` e `🇺🇸 ...`.
+5. Fai commit e Push Origin.
+6. Pubblica la release creando il tag:
 
-Il workflow parte sui tag `v*` e può anche essere rilanciato manualmente con un tag già esistente.
+```bash
+git tag -a v26.10.1 -m "Release _davMEDIA v26.10.1"
+git push origin v26.10.1
+```
 
-Build prodotte:
-- Windows x64: NSIS
-- macOS Apple Silicon: DMG
-- macOS Intel: DMG
-- Linux x64: AppImage e DEB
-
-Prima della build il workflow scarica FFmpeg e FFprobe per l'architettura del runner, verifica che le tre versioni tecniche coincidano con il tag e avvia i test.
+GitHub Actions creerà le build Windows, macOS Apple Silicon, macOS Intel e Linux e userà automaticamente la Description del commit taggato come testo della GitHub Release. Il workflow rifiuta una Description vuota o priva di entrambe le sezioni `🇮🇹` e `🇺🇸`.

@@ -1,5 +1,12 @@
-# Multipiattaforma
+# Multiplatform
 
-`_davMEDIA` usa Tauri 2 e un backend Rust che avvia FFmpeg localmente. I pacchetti npm `ffmpeg-static` e `@derhuerst/ffprobe-static` forniscono i binari per la piattaforma corrente durante sviluppo e build.
+`_davMEDIA` v26.10.1 uses one Tauri codebase for Windows, macOS and Linux and bundles FFmpeg/FFprobe for the build platform.
 
-La preview v1.0.0 è pensata per test locali. La pipeline di release GitHub e il packaging definitivo multipiattaforma verranno aggiunti al passaggio v1.0.0.
+- Windows x64: NSIS installer
+- macOS Apple Silicon: DMG
+- macOS Intel: DMG
+- Linux x64: AppImage and DEB
+
+The included GitHub Actions workflow builds each package on its native runner. macOS intentionally uses separate Apple Silicon and Intel jobs so the bundled FFmpeg/FFprobe binaries match each architecture.
+
+Releases are currently not signed with a trusted commercial Windows certificate or Apple Developer ID/notarization. Installation guidance for Windows SmartScreen, macOS Gatekeeper and Linux AppImage permissions is documented in `README.md`.

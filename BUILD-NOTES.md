@@ -1,13 +1,31 @@
-# _davMEDIA v1.0.1
+# _davMEDIA v26.10.1 build notes
 
-Release stabile.
+## Requirements
 
-`npm install` installa i pacchetti che forniscono FFmpeg e FFprobe per la piattaforma corrente. Prima di `tauri dev` e `tauri build`, lo script `prepare:ffmpeg` copia i binari in `src-tauri/resources/ffmpeg`.
+- Node.js LTS
+- Rust 1.85 or newer
+- Tauri 2 platform prerequisites
 
-Per Windows usa `RUN-WINDOWS.bat`. Su macOS e Linux usa gli script `RUN-MACOS.sh` e `RUN-LINUX.sh`.
+## FFmpeg / FFprobe
 
-La build nativa richiede Rust, Node.js e le dipendenze Tauri della piattaforma.
-## Windows development watcher
+`npm install` installs the packages that provide FFmpeg and FFprobe for the current platform. Before `tauri dev` and `tauri build`, `npm run prepare:ffmpeg` copies the platform-specific binaries into `src-tauri/resources/ffmpeg`.
 
-Vite ignores `src-tauri/**` during development so Rust build artifacts in `src-tauri/target` are never watched by Node. This avoids Windows `EBUSY` errors while Cargo is compiling executables.
+## Windows
 
+Run `RUN-WINDOWS.bat` or `BUILD-WINDOWS.bat`.
+
+## macOS
+
+Run `./RUN-MACOS.sh` or `./BUILD-MACOS.sh`.
+
+The GitHub release pipeline intentionally uses separate Apple Silicon and Intel runners so each DMG receives the correct FFmpeg/FFprobe architecture.
+
+## Linux
+
+On Ubuntu/Debian run `./INSTALL-LINUX-DEPS-UBUNTU.sh` first, then use `./RUN-LINUX.sh` or `./BUILD-LINUX.sh`.
+
+## Release scope
+
+Version 26.10.1 adopts the `_davstudios` `YY.M.REVISIONE` release standard, standardized package metadata and automatic bilingual GitHub Release descriptions. The media engine, Rust backend and existing UI behavior are unchanged from the previous stable release.
+
+The release is intentionally not signed with a trusted commercial Windows certificate or Apple Developer ID/notarization. See `README.md` for user-facing installation guidance.
