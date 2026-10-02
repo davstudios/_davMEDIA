@@ -23,3 +23,4 @@ test('launcher Windows evita la doppia preparazione FFmpeg',()=>{
   assert.match(bat,/call npx tauri dev/);
   assert.doesNotMatch(bat,/call npm run desktop/);
 });
+

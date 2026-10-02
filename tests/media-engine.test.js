@@ -19,3 +19,4 @@ test('coda completata torna pronta per una nuova conversione',()=>{
   const files=resetQueueItems([{path:'a.mp4',status:'done',progress:100},{path:'b.mp4',status:'failed',progress:0}]);
   assert.deepEqual(files.map((file)=>[file.status,file.progress]),[['ready',0],['ready',0]]);
 });
+

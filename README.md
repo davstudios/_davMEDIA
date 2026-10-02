@@ -6,7 +6,7 @@
 **Toolbox locale per convertire, estrarre e comprimere audio e video.**  
 **Local toolbox for converting, extracting and compressing audio and video.**
 
-`v26.10.1` · Windows · macOS · Linux · Local-first · Open source
+`v26.10.2` · Windows · macOS · Linux · Local-first · Open source
 
 [![Italiano](https://img.shields.io/badge/Italiano-006EDB?style=for-the-badge)](#-italiano)
 [![English](https://img.shields.io/badge/English-141416?style=for-the-badge)](#-english)
@@ -121,7 +121,7 @@ npm run bundle
 - Homepage: https://davstudios.it
 - Licenza del codice `_davMEDIA`: MIT
 - Bundle identifier: `studio.dav.media`
-- Versione corrente: `26.10.1`
+- Versione corrente: `26.10.2`
 
 ## Licenza
 
@@ -237,10 +237,11 @@ npm run bundle
 - Homepage: https://davstudios.it
 - `_davMEDIA` source-code license: MIT
 - Bundle identifier: `studio.dav.media`
-- Current version: `26.10.1`
+- Current version: `26.10.2`
 
 ## License
 
 The `_davMEDIA` source code is distributed under the **MIT License**. See [`LICENSE`](LICENSE). FFmpeg, FFprobe and other third-party dependencies retain their respective licenses.
 
 <div align="right"><a href="#davmedia">↑ Back to top</a></div>
+

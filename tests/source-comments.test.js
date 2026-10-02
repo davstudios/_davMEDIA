@@ -9,3 +9,4 @@ const files=[];
 for(const root of roots){for(const entry of fs.readdirSync(root,{recursive:true,withFileTypes:true})){if(!entry.isFile()) continue;const full=path.join(entry.parentPath,entry.name);if(extensions.has(path.extname(entry.name))) files.push(full);}}
 
 test('sorgenti senza commenti',()=>{for(const file of files){const text=fs.readFileSync(file,'utf8').replace(/https?:\/\/[^\s'"<)]+/g,'');assert.doesNotMatch(text,/\/\*|\*\//,file);assert.doesNotMatch(text,/^\s*\/\//m,file);assert.doesNotMatch(text,/<!--|-->/,file);}});
+

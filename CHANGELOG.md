@@ -1,5 +1,13 @@
 # Changelog
 
+## 26.10.2
+
+- Corretto il controllo di sincronizzazione di `Cargo.lock` sui checkout Windows con terminatori CRLF.
+- Aggiunto un test di regressione dedicato ai terminatori LF/CRLF e ampliata la verifica release a npm, Tauri, Cargo e relativi lockfile.
+- Rafforzati i percorsi e gli script di build/avvio multipiattaforma senza modificare il motore media.
+- Applicata la repository normalization dei file testuali con regole EOL deterministiche, preservando byte-per-byte gli asset binari e i binari FFmpeg/FFprobe.
+- Nessuna modifica funzionale al motore FFmpeg/FFprobe, al backend Rust o all'interfaccia.
+
 ## 26.10.1
 
 - Adottato il nuovo standard di versioning `_davstudios` `YY.M.REVISIONE`.
@@ -32,3 +40,4 @@ Prima release stabile di `_davMEDIA`.
 - Versione UI letta automaticamente da Tauri.
 - Icona ufficiale `_davMEDIA`.
 - Release GitHub multipiattaforma.
+

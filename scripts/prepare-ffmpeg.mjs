@@ -48,3 +48,4 @@ for(const [source,destination,name] of targets){
 }
 
 console.log(`FFmpeg e FFprobe pronti in ${target}`);
+

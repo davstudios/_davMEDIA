@@ -48,3 +48,4 @@ export const progressPercent=(outTimeUs,durationSeconds)=>{
 };
 
 export const resetQueueItems=(files)=>Array.isArray(files)?files.map((file)=>({...file,status:'ready',progress:0})):[];
+

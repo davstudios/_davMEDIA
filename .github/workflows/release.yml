@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Existing tag to build, for example v26.10.1'
+        description: 'Existing tag to build, for example v26.10.2'
         required: true
         type: string
 
@@ -34,6 +34,19 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Validate repository paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          test -f package.json
+          test -f package-lock.json
+          test -f src-tauri/tauri.conf.json
+          test -f src-tauri/Cargo.toml
+          test -f src-tauri/Cargo.lock
+          test -f scripts/prepare-ffmpeg.mjs
+          test -f scripts/verify-release-version.mjs
 
       - name: Install Linux dependencies
         if: matrix.platform == 'ubuntu-22.04'
@@ -109,4 +122,6 @@ jobs:
           releaseBody: ${{ steps.release_description.outputs.body }}
           releaseDraft: false
           prerelease: false
+          projectPath: .
           args: ${{ matrix.args }}
+

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-set -e
-cd "$(dirname "$0")"
-npm install
+set -euo pipefail
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+cd "$ROOT"
+command -v node >/dev/null || { echo "[ERRORE] Node.js non trovato."; exit 1; }
+command -v cargo >/dev/null || { echo "[ERRORE] Rust/Cargo non trovato. Installa Rust con rustup."; exit 1; }
+npm install --no-audit --no-fund
+echo "Avvio _davMEDIA..."
 npm run desktop
+

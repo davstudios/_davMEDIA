@@ -1,4 +1,4 @@
-# _davMEDIA v26.10.1 build notes
+# _davMEDIA v26.10.2 build notes
 
 ## Requirements
 
@@ -26,6 +26,7 @@ On Ubuntu/Debian run `./INSTALL-LINUX-DEPS-UBUNTU.sh` first, then use `./RUN-LIN
 
 ## Release scope
 
-Version 26.10.1 adopts the `_davstudios` `YY.M.REVISIONE` release standard, standardized package metadata and automatic bilingual GitHub Release descriptions. The media engine, Rust backend and existing UI behavior are unchanged from the previous stable release.
+Version 26.10.2 keeps the `_davstudios` `YY.M.REVISIONE` release standard, standardized package metadata and automatic bilingual GitHub Release descriptions. This revision fixes Windows CRLF-safe release-version validation and normalizes repository text files without changing media behavior. The media engine, Rust backend and existing UI behavior are unchanged from the previous stable release.
 
 The release is intentionally not signed with a trusted commercial Windows certificate or Apple Developer ID/notarization. See `README.md` for user-facing installation guidance.
+

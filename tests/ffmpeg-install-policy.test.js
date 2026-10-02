@@ -8,3 +8,4 @@ test('script install FFmpeg approvati esplicitamente',()=>{
   assert.equal(packageJson.allowScripts?.['ffmpeg-static'],true);
   assert.equal(packageJson.allowScripts?.['@derhuerst/ffprobe-static'],true);
 });
+

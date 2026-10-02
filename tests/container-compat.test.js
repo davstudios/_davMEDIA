@@ -30,3 +30,4 @@ test('framerate anomalo viene normalizzato',()=>{
   assert.match(source,/frame_rate > 120\.0/);
   assert.match(source,/"fps=30"/);
 });
+

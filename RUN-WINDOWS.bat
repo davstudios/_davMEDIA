@@ -1,6 +1,7 @@
 @echo off
 setlocal EnableExtensions
-cd /d "%~dp0"
+set "DAVMEDIA_ROOT=%~dp0"
+cd /d "%DAVMEDIA_ROOT%"
 
 echo.
 echo ========================================
@@ -31,7 +32,7 @@ rustc --version
 echo.
 echo [4/6] Verifica dipendenze npm...
 if exist "node_modules\@tauri-apps\cli\tauri.js" if exist "node_modules\ffmpeg-static\index.js" if exist "node_modules\@derhuerst\ffprobe-static\index.js" goto deps_ready
-call npm install --include=dev
+call npm install --include=dev --no-audit --no-fund
 if errorlevel 1 goto npm_error
 :deps_ready
 
@@ -108,3 +109,4 @@ echo L'avvio non e stato completato.
 echo ========================================
 pause
 exit /b 1
+

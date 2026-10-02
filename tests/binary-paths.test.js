@@ -13,3 +13,4 @@ test('export path legacy viene riconosciuto',()=>{
 test('export default viene riconosciuto',()=>{
   assert.equal(exportedPath({default:'/tools/ffprobe'}),'/tools/ffprobe');
 });
+

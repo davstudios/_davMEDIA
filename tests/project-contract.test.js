@@ -6,7 +6,7 @@ test('metadata pacchetto _davstudios presenti',()=>{
   const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
   const tauri=JSON.parse(fs.readFileSync('src-tauri/tauri.conf.json','utf8'));
   const cargo=fs.readFileSync('src-tauri/Cargo.toml','utf8');
-  assert.equal(pkg.version,'26.10.1');
+  assert.equal(pkg.version,'26.10.2');
   assert.equal(pkg.author,'_davstudios');
   assert.equal(pkg.license,'MIT');
   assert.equal(pkg.homepage,'https://davstudios.it');
@@ -46,3 +46,4 @@ test('workflow preserva preparazione FFmpeg multipiattaforma',()=>{
   assert.match(text,/macos-15-intel/);
   assert.match(text,/--bundles appimage,deb/);
 });
+

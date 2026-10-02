@@ -27,3 +27,4 @@ export function packageBinaryCandidates(requireFn, packageName, binaryName, suff
 export function firstExisting(candidates) {
   return candidates.find((candidate) => existsSync(candidate)) || '';
 }
+

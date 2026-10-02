@@ -21,3 +21,4 @@ pub fn run_action(action: String, paths: Vec<String>, options: ActionOptions) ->
     }
     match cmd.output() { Ok(out) if out.status.success()=>result(true,"Media operation completed","A new output file was created",dest.into()),Ok(out)=>result(false,"Media operation failed","FFmpeg returned an error",String::from_utf8_lossy(&out.stderr).into_owned()),Err(e)=>result(false,"Media operation failed","Unable to start FFmpeg",e.to_string()) }
 }
+

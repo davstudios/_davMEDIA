@@ -8,3 +8,4 @@ test('Vite 8 usa Oxc e non esbuild per la minificazione',()=>{
   assert.match(vite,/minify:\s*['"]oxc['"]/);
   assert.doesNotMatch(vite,/minify:\s*['"]esbuild['"]/);
 });
+

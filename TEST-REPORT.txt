@@ -1,29 +1,35 @@
-_davMEDIA v26.10.1 — Test report
-Date: 2026-10-01
+_davMEDIA v26.10.2 — Test report
+Date: 2026-10-02
 
-Automated tests: 37/37 passed
+Automated tests: 38/38 passed
 - Media/FFmpeg engine tests: passed
 - FFprobe path compatibility tests: passed
 - Queue and format tests: passed
 - Project/package metadata contract: passed
 - GitHub Release bilingual-description contract: passed
 - Version synchronization: passed
+- Windows CRLF Cargo.lock regression test: passed
 - Vite 8/Oxc build-policy tests: passed
 
+Windows checkout simulation:
+- Cargo.lock was physically converted to CRLF in a temporary verification pass.
+- Full npm test suite under CRLF: 38/38 passed.
+- scripts/verify-release-version.mjs under CRLF: passed.
+- Release verifier was also executed from outside the repository root to validate path-independent resolution: passed.
+
 Static validation:
-- src/main.js: syntax valid
-- src/media-engine.js: syntax valid
-- scripts/verify-release-version.mjs: syntax valid
-- vite.config.js: syntax valid
+- JavaScript/MJS syntax checks: passed
+- Shell script syntax checks: passed
 - package.json: valid JSON
 - package-lock.json: valid JSON
 - src-tauri/tauri.conf.json: valid JSON
 - src-tauri/capabilities/default.json: valid JSON
+- generated JSON schemas: valid JSON
 - .github/workflows/release.yml: valid YAML
 
 Bundle metadata:
-- Version: 26.10.1
-- Public tag: v26.10.1
+- Version: 26.10.2
+- Public tag: v26.10.2
 - Publisher: _davstudios
 - Homepage: https://davstudios.it
 - License: MIT for _davMEDIA source code; third-party components retain their licenses
@@ -38,14 +44,23 @@ Release workflow:
 - macOS Apple Silicon DMG
 - macOS Intel DMG
 - Linux x64 AppImage and DEB
+- Explicit repository path validation before the build
+- Explicit Tauri projectPath set to repository root
 - FFmpeg/FFprobe preparation preserved
 - GitHub Release body is read from the tagged commit Description
 - Both 🇮🇹 and 🇺🇸 sections are required
 - Linux apt workflow hardened against unavailable Microsoft repositories
 
+Repository normalization:
+- Every pre-existing UTF-8 text file in the supplied v26.10.1 package received a real deterministic text normalization change.
+- .gitattributes now fixes LF/CRLF policy by file type.
+- Icon and FFmpeg resource directories include release metadata without modifying binary assets.
+- Existing PNG/ICO/ICNS icons and FFmpeg/FFprobe executables were verified byte-for-byte unchanged by SHA-256 comparison.
+
 Functional scope:
-- 15 functional source/backend/config files were compared byte-for-byte against the supplied source ZIP and remained unchanged.
-- Media engine, Rust backend, UI/CSS, FFmpeg preparation scripts and existing runtime behavior were not changed in this metadata/release-standard update.
+- All 10 files under src/ and src-tauri/src/ were compared after ignoring the intentional trailing normalization line and remained functionally identical to the supplied v26.10.1 package.
+- Media conversion logic, FFmpeg/FFprobe command generation, Rust backend behavior and UI behavior were not changed.
+- Build/release/launcher infrastructure was hardened without changing application features.
 
 Code signing:
 - No trusted commercial Windows certificate configured.
@@ -53,4 +68,5 @@ Code signing:
 - README contains SmartScreen, Gatekeeper and AppImage guidance.
 
 Native build:
-- Native Tauri packages are expected to be verified by GitHub Actions on Windows, macOS and Linux.
+- Native Tauri package generation remains delegated to GitHub Actions on Windows, macOS and Linux.
+
